@@ -1,0 +1,250 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(-45deg, #e2b4a6, #ebacc4, #a8cddb, #9fcfc4);
+}
+
+.container {
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  justify-content: center;
+	align-items: center;
+}
+
+.main-block {
+  display: flex;
+  flex-direction: column;
+  border-radius: 40px;
+  width: auto;
+  min-width: 750px;
+  min-height: 350px;
+  height: auto;
+  background-color: aliceblue;
+  border: 1px solid black;
+}
+
+.form-container {
+  display: flex;
+  width: auto;
+  height: auto;
+  margin-top: 70px;
+  margin-left: 150px;
+  margin-right: 150px;
+  flex-direction: column;
+  justify-content: center;
+	align-items: center;
+}
+
+.chat-field {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 350px;
+  width: 415px;
+
+  overflow-y: scroll;
+
+  scrollbar-width: none; /* Для Firefox */
+  -ms-overflow-style: none;
+}
+
+.chat-field::-webkit-scrollbar { 
+  display: none; 
+}
+
+.chat-container {
+  display: none;
+  flex-wrap: nowrap;
+  width: auto;
+  height: auto;
+  margin-top: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
+  justify-content: center;
+	align-items: center;
+}
+
+.authentication-form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 25px;
+  background-color: honeydew;
+  margin-bottom: 65px;
+}
+
+.chat-block {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 25px;
+  background-color: honeydew;
+  margin-bottom: 65px;
+  height: 400px;
+}
+
+.users-online {
+  display: flex;
+  width: 135px;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 25px;
+  background-color: honeydew;
+  margin-bottom: 65px;
+  height: 400px;
+  margin-right: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.form-title {
+  padding-bottom: 25px;
+  margin: auto;
+}
+
+.user-name {
+  min-height: 25px;
+  width: 98%;
+}
+
+.btn-subscribe-block {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  padding: 10px 25px;
+  margin-top: 20px;
+  width: 75%;
+  border: 1px solid black;
+  background-color: rgb(225, 228, 241);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.message-element {
+  display: flex;
+  width: 400px;
+  flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.message-element-server {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: start;
+}
+
+.date-block {
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+  overflow: auto;
+  white-space: normal;
+  word-wrap: break-word;
+  margin: 10px 5px 0 5px;
+  font-size: 10px;
+  padding: 0;
+  color: red;
+}
+
+.date-block-server {
+  display: inline-block;
+  width: 150px;
+  text-align: left;
+  overflow: auto;
+  white-space: normal;
+  word-wrap: break-word;
+  margin: 10px 5px 0 5px;
+  font-size: 10px;
+  padding: 0;
+  color: black;
+}
+
+.message-text {
+  display: inline-block;
+  width: 260px;
+  text-align: right;
+  overflow: auto;
+  white-space: normal;
+  word-wrap: break-word;
+  margin: 10px 5px 10px 5px;
+}
+
+.message-text-server {
+  display: inline-block;
+  width: 200px;
+  text-align: left;
+  overflow: auto;
+  white-space: normal;
+  word-wrap: break-word;
+  margin: 10px 5px 10px 5px;
+}
+
+.chat-message {
+  display: flex;
+  width: auto;
+  height: auto;
+  min-height: 40px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 10px;
+}
+
+.users-online-title {
+  font-weight: bold;
+  font-size: 14px;
+  width: 135px;
+  white-space: pre-wrap;
+  text-align: center;
+  margin-top: 0;
+}
+
+.user-block {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10px 0 10px 5px;
+  width: 100%;
+}
+
+.user-block::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #fffefe;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.users-online-container {
+  display: flex;
+  flex-wrap: wrap-reverse;
+ 
+  overflow-y: scroll;
+
+  scrollbar-width: none; /* Для Firefox */
+  -ms-overflow-style: none;
+}
+
+.users-online-container::-webkit-scrollbar { 
+  display: none; 
+}

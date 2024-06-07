@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      .subscriptions, .chat {
+        white-space: pre;
+      }
+    </style>
+</head>
+<body>
+<div class="container">
+  <h1 class="title">Домашнее задание к занятию "8. EventSource, Websockets"</h1>
+  <div class="main-block">
+    <div class="form-container">
+      <form class="authentication-form" method="POST" action="">
+        <span class="form-title">Выберите псевдоним</span>
+        <label>
+          <input class="user-name" type="text" name="name" required>
+        </label>
+        <div class="btn-subscribe-block">
+          <button class="btn subscribe-ok" type="submit">Продолжить</button>
+        </div>
+      </form>
+    </div>
+    <div class="chat-container">
+      <div class="users-online">
+        <p class="users-online-title">Пользователи онлайн.</p>
+        <div class="users-online-container"></div>
+      </div>
+      <div class="chat-block">
+        <div class="chat-field">
+          <div class="subscriptions"></div>
+          <div class="chat"></div>
+        </div>
+        <input class="chat-message" placeholder="Type your message here">
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
