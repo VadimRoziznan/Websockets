@@ -1,10 +1,7 @@
 const formContainer = document.querySelector(".form-container");
 const userNameForm = formContainer.querySelector(".authentication-form");
 const chatContainer = document.querySelector(".chat-container");
-const chatSend = document.querySelector(".chat-send");
 const chatMessage = document.querySelector(".chat-message");
-
-const chatField = document.querySelector(".chat-field ");
 const usersOnlineBlock = document.querySelector(".users-online-container");
 const date = new Date();
 
@@ -37,16 +34,16 @@ class SubscriptionApi {
       formContainer.style.display = "none";
       chatContainer.style.display = "flex";
 
-      const spanElements = usersOnlineBlock.querySelectorAll('span');
+      const spanElements = usersOnlineBlock.querySelectorAll("span");
 
       spanElements.forEach((span) => {
         span.remove();
       });
-      
+
       let index = usersOnline.indexOf(userName);
       if (index > -1) {
-        usersOnline.splice(index, 1);  // Удаляем элемент из текущей позиции
-        usersOnline.unshift(userName); // Добавляем его в начало
+        usersOnline.splice(index, 1);
+        usersOnline.unshift(userName);
       }
 
       usersOnline.forEach((userNameOnLine) => {
@@ -72,35 +69,24 @@ userNameForm.addEventListener("submit", (event) => {
   api.add({ name: userName });
 });
 
-
-
-
-
-
 const ws = new WebSocket("ws://localhost:3000/ws"); // Подключаемся к серверу WebSocket
 
-const chatMessageInput = document.querySelector('.chat-message');
-const chatSendButton = document.querySelector('.chat-send');
-const chatDiv = document.querySelector('.chat');
+const chatMessageInput = document.querySelector(".chat-message");
+const chatDiv = document.querySelector(".chat");
 
 // Отправка сообщения по нажатию кнопки
-/*chatSendButton.addEventListener('click', () => {*/
-chatMessage.addEventListener('keyup', (event) => {
-
-  if (event.key === 'Enter') {
-    const dateString = date.toLocaleString(); // 2023-02-20 14:30:00
+chatMessage.addEventListener("keyup", (event) => {
+  if (event.key === "Enter") {
+    const dateString = date.toLocaleString();
     const data = { name: userName, message: chatMessageInput.value };
     const message = JSON.stringify(data);
     ws.send(message); // Отправляем сообщение на сервер
 
-    const messageElement = document.createElement('div');
+    const messageElement = document.createElement("div");
     messageElement.classList.add("message-element");
 
-    const messageText = document.createElement('span');
+    const messageText = document.createElement("span");
     const dateBlock = document.createElement("span");
-
-    
-
 
     messageText.classList.add("message-text");
     dateBlock.classList.add("date-block");
@@ -113,18 +99,18 @@ chatMessage.addEventListener('keyup', (event) => {
 
     chatDiv.appendChild(messageElement);
 
-    chatMessageInput.value = ""; // Очищаем поле ввода
+    chatMessageInput.value = "";
   }
 });
 
 // Получение сообщений от сервера
-ws.addEventListener('message', (event) => {
+ws.addEventListener("message", (event) => {
   const data = JSON.parse(event.data);
   if (data.users) {
-    console.log('Received users list:', data.users);
+    console.log("Received users list:", data.users);
 
     usersOnline = data.users;
-    const spanElements = usersOnlineBlock.querySelectorAll('span');
+    const spanElements = usersOnlineBlock.querySelectorAll("span");
 
     spanElements.forEach((span) => {
       span.remove();
@@ -132,8 +118,8 @@ ws.addEventListener('message', (event) => {
 
     let index = usersOnline.indexOf(userName);
     if (index > -1) {
-      usersOnline.splice(index, 1);  // Удаляем элемент из текущей позиции
-      usersOnline.unshift(userName); // Добавляем его в начало
+      usersOnline.splice(index, 1);
+      usersOnline.unshift(userName);
     }
 
     usersOnline.forEach((userNameOnLine) => {
@@ -147,13 +133,13 @@ ws.addEventListener('message', (event) => {
       usersOnlineBlock.appendChild(userBlock);
     });
   } else {
-    const { name, message } = data; // Парсим JSON-строку в объект
-    const dateString = date.toLocaleString(); // 2023-02-20 14:30:00
+    const { name, message } = data;
+    const dateString = date.toLocaleString();
 
-    const messageElement = document.createElement('div');
+    const messageElement = document.createElement("div");
     messageElement.classList.add("message-element-server");
 
-    const messageText = document.createElement('span');
+    const messageText = document.createElement("span");
     const dateBlock = document.createElement("span");
 
     messageText.classList.add("message-text-server");
@@ -168,6 +154,3 @@ ws.addEventListener('message', (event) => {
     chatDiv.appendChild(messageElement);
   }
 });
-
-
-
