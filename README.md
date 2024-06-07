@@ -1,3 +1,6 @@
+#### Доступно на Github Pages: [Работа с Websockets](https://vadimroziznan.github.io/Websockets/)
+
+
 # Домашнее задание к занятию "8. EventSource, Websockets"
 
 Правила сдачи задания:
